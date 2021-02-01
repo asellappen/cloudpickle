@@ -46,7 +46,7 @@ install:
 script:
   - travis_retry tox
   - coverage run .codecov.yml
-  - coverage run -m pytest test
+  - coverage run -m pytest test/cloudpickle_file_test.py
   - coverage report -m
   
   
