@@ -45,7 +45,8 @@ install:
 
 script:
   - travis_retry tox
-  - coverage run --source=.
+  - coverage run .codecov.yml
+  - coverage run -m pytest test
   - coverage report -m
   
   
