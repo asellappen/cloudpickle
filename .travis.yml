@@ -39,17 +39,9 @@ install:
   - pip install -r dev-requirements.txt
   - python setup.py install
   - pip install --no-deps -e .
-  - pip install codecov
   - travis_retry pip install tox
-  - pip install pytest
+
 
 script:
   - travis_retry tox
-  - coverage run .codecov.yml
-  - coverage run -m pytest test/cloudpickle_file_test.py
-  - coverage report -m
-  
-  
-after_success:
-  - codecov
-  
+
