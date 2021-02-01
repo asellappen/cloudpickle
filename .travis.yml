@@ -39,7 +39,11 @@ install:
   - pip install -r dev-requirements.txt
   - python setup.py install
   - pip install --no-deps -e .
+  - python ci/install_coverage_subprocess_pth.py
   - travis_retry pip install tox
+  - python ci/install_coverage_subprocess_pth.py
+  - pip install pytest
 
 script:
   - travis_retry tox
+  - python -m pytest tests/
